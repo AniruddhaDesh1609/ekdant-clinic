@@ -1,0 +1,180 @@
+/* ===== Global Background for All Pages ===== */
+body {
+  font-family: "Inter", sans-serif;
+  background: url("/background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  color: #222;
+}
+
+
+/* ========== General Setup ========== */
+body {
+  font-family: "Inter", sans-serif;
+  background: #f9fafb;
+  color: #222;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  color: #0369a1;
+}
+
+/* ========== Hero Section ========== */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 4rem 2rem;
+  color: #fff;
+}
+
+/* Background image */
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(0.55) blur(2px);
+  z-index: -1;
+}
+
+/* Content layout */
+.hero-content {
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== Text Styling ===== */
+.hero-section h1 {
+  color: #ffffff;
+  font-weight: 700;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.hero-section h1.text-primary {
+  color: #f4c542 !important;
+}
+
+.hero-section p {
+  color: #ffffff !important;
+  font-size: 1.1rem;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+  margin-bottom: 1.5rem;
+}
+
+/* ========== Image Grid for Zig-Zag Layout ========== */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto auto auto;
+  gap: 1.2rem;
+  align-items: start;
+}
+
+.image-card {
+  overflow: hidden;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+}
+
+.image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.4s ease;
+}
+
+/* Actual zig-zag placement */
+.img-top {
+  grid-column: 1;
+  grid-row: 1;
+  height: 260px;
+}
+
+.img-mid {
+  grid-column: 2;
+  grid-row: 2;
+  height: 230px;
+}
+
+.img-bottom {
+  grid-column: 1;
+  grid-row: 3;
+  height: 240px;
+}
+
+/* Hover */
+.image-card:hover img {
+  transform: scale(1.05);
+}
+
+.image-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* ========== Button ========== */
+.btn-warning {
+  background-color: #ffb300;
+  border: none;
+  color: #000;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-warning:hover {
+  background-color: #ff9800;
+  transform: scale(1.05);
+}
+
+.nav-link {
+  color: #000;
+  text-decoration: none;
+  padding: 8px 14px;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: #007bff;
+}
+
+.active-link {
+  background-color: #bfa256; /* soft gold */
+  color: #fff !important;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+
+/* ========== Responsive ========== */
+@media (max-width: 768px) {
+  .hero-content {
+    text-align: center;
+  }
+
+  .image-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .img-top,
+  .img-mid,
+  .img-bottom {
+    grid-column: auto;
+    grid-row: auto;
+    height: 200px;
+  }
+}
